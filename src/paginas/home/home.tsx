@@ -1,14 +1,33 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import './home.css';
 
-function Home(){
+interface minhaProps{
+    title: string;
+    description: string;
+}
+
+function Home(props:minhaProps){
+    const [completed, setCompleted] = useState(false);
+    const [tarefa, setTarefa] = useState("");
+
+    useEffect(() => {
+        if (completed) {
+            setTarefa('Parabéns! Você concluiu a tarefa!');
+        }
+    }, [completed]);
     return(
         <>
-        <h1 className="titulo">Hello World</h1>
-        <h1 className="titulo">Daniel Lucas Santana Lopes</h1>    
-        <img src="https://images.stockcake.com/public/1/e/f/1efd9cc9-008c-49f8-ba71-d2d92257e3e9_large/sunset-coastal-view-stockcake.jpg" alt="Imagem" className="img" />
+        <h2>{props.title}</h2>
+        <p>{props.description}</p>
+        <img src="https://th.bing.com/th/id/OIP.PkXPfVWQG9ijIPq2gR5Y1wHaE7?rs=1&pid=ImgDetMain" alt="neymar" className="img" />
+        <h1>Tarefa</h1>
+        <h3>{tarefa}</h3>
+        <p>Conclua a tarefa!</p>
+        <button onClick={() => setCompleted(true)}>Concluir tarefa</button>
         </>
     );
 }
+
+
 
 export default Home;
