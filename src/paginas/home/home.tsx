@@ -1,6 +1,7 @@
 import React from 'react';
 import homeLogo from '../../assets/cadastro.jpg'
 import './home.css';
+import ListaPostagens from '../../components/postagens/listaPostagens/ListaPostagens';
 
 function Home() {
   return (
@@ -22,7 +23,7 @@ function Home() {
           </div>
         </div>
       </div>
-
+      <ListaPostagens />
     </>
   );
 }
