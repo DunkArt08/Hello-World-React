@@ -1,13 +1,34 @@
-import React from "react";
+import React from 'react';
+import homeLogo from '../../assets/login.jpg'
 import './home.css';
+import ListaPostagens from '../../components/postagens/listaPostagens/ListaPostagens';
+import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 
-function Home(){
-    return(
+
+
+function Home() {
+    return (
         <>
-        <h1 className="titulo">Hello World</h1>
-        <h1 className="titulo">Daniel Lucas Santana Lopes</h1>    
-        <img src="https://images.stockcake.com/public/1/e/f/1efd9cc9-008c-49f8-ba71-d2d92257e3e9_large/sunset-coastal-view-stockcake.jpg" alt="Imagem" className="img" />
-        </>
+        <div className="bg-indigo-900 flex justify-center">
+          <div className='container grid grid-cols-2 text-white'>
+            <div className="flex flex-col gap-4 items-center justify-center py-4">
+              <h2 className='text-5xl font-bold'>Seja bem vinde!</h2>
+              <p className='text-xl'>Expresse aqui seus pensamentos e opniões</p>
+  
+              <div className="flex justify-around gap-4">
+              <ModalPostagem />
+              <button className='rounded bg-white text-blue-800 py-2 px-4'>Ver postagens</button>
+            </div>
+            </div>
+  
+            <div className="flex justify-center ">
+              <img src={homeLogo} alt="" className='w-2/3' />
+      
+            </div>
+          </div>
+        </div>
+        <ListaPostagens />
+      </>
     );
 }
 
